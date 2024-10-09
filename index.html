@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <!-- Meta viewport untuk memastikan responsivitas di perangkat mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Link ke Tableau API -->
+    <script
+      type="text/javascript"
+      src="https://public.tableau.com/javascripts/api/tableau-2.min.js"
+    ></script>
+
+    <!-- CSS Styling -->
+    <style>
+      /* Reset margin, padding, dan box-sizing */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Mengatur font dan latar belakang dasar */
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f6f9;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
+
+      /* Header halaman */
+      h1 {
+        margin-bottom: 20px;
+        color: #333;
+        text-align: center;
+      }
+
+      /* Kontainer untuk Tableau */
+      #vizContainer {
+        margin-bottom: 20px;
+        margin-left: 5px;
+        margin-right: 5px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Kontainer untuk tombol */
+      .button-container {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      /* Styling tombol */
+      .download-button {
+        padding: 12px 24px;
+        font-size: 16px;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        box-shadow: 0 2px 4px rgba(0, 123, 255, 0.4);
+      }
+
+      /* Hover efek untuk tombol */
+      .download-button:hover {
+        background-color: #0056b3;
+        transform: translateY(-2px);
+      }
+
+      /* Active efek untuk tombol */
+      .download-button:active {
+        background-color: #004494;
+        transform: translateY(0);
+        box-shadow: 0 1px 2px rgba(0, 69, 148, 0.4);
+      }
+
+      /* Responsive styling */
+      @media (max-width: 768px) {
+        #vizContainer {
+          height: 400px;
+        }
+
+        .download-button {
+          width: 100%;
+          text-align: center;
+        }
+
+        .button-container {
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        #vizContainer {
+          height: 300px;
+        }
+
+        .download-button {
+          font-size: 14px;
+          padding: 10px 20px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1></h1>
+    <div id="vizContainer"></div>
+
+    <div class="button-container">
+      <button id="exportPDF" class="download-button">Download PDF</button>
+      <button id="exportImage" class="download-button">Download Image</button>
+    </div>
+
+    <!-- Skrip Tableau -->
+    <script src="./app.js"></script>
+  </body>
+</html>
