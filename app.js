@@ -3,13 +3,13 @@ console.log("Is this working?");
 let viz;
 
 const url =
-  "https://public.tableau.com/views/DashboardAgrikulturBlitar/Home?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link";
+  "https://public.tableau.com/views/DS-SDGsASforAgri-Dash24/Home?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link";
 
 const vizContainer = document.getElementById("vizContainer");
 const options = {
   hideTabs: true,
-  height: 800,
-  width: 1150,
+  height: 900,
+  width: 1600,
   onFirstInteraction: function () {
     workbook = viz.getWorkbook();
     activeSheet = workbook.getActiveSheet();
